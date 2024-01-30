@@ -1,0 +1,13 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.button-icon {
+  transition: transform 1s ease-in-out;
+}
+
+.button-icon.rotate {
+  transform: rotate(540deg);
+}
+
