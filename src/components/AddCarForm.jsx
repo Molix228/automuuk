@@ -30,8 +30,7 @@ const AddCarForm = () => {
         Honda: ['CR-V', 'HR-V', 'Accord'],
         BMW: ['X5', 'X3', '5 series', '3 series'],
         Mercedes: ['C klass', 'S klass', 'E klass', 'B klass'],
-        Ford: ['Mustang', 'Mondeo', 'Focus', 'F150']
-        // Добавьте модели для остальных брендов
+        Ford: ['Mustang', 'Mondeo', 'Focus', 'F150'],
     };
 
     const handleInputChange = (e) => {
@@ -62,13 +61,13 @@ const AddCarForm = () => {
     };
 
     const validateForm = () => {
-        // Простая валидация: проверяем, что обязательные поля заполнены
+
         if (
             !carData.brand ||
             !carData.model ||
             !carData.type ||
-            carData.year === undefined || // Обновлено
-            carData.price === undefined || // Обновлено
+            carData.year !== undefined || // Обновлено
+            carData.price !== undefined || // Обновлено
             !carData.color
         ) {
             setError('Please fill in all required fields.');
@@ -86,11 +85,16 @@ const AddCarForm = () => {
 
         try {
             const formData = new FormData();
+            formData.append('brand', carData.brand);
+            formData.append('model', carData.model);
+            formData.append('type', carData.type);
+            formData.append('year', carData.year);
+            formData.append('price', carData.price);
+            formData.append('color', carData.color);
+            formData.append('weight', carData.weight);
+            formData.append('mileage', carData.mileage);
+            formData.append('specs', carData.specs);
             formData.append('photo', selectedFile);
-
-            Object.entries(carData).forEach(([key, value]) => {
-                formData.append(key, value);
-            });
 
             const response = await axios.post('https://flask-auto-app-0eec456208d8.herokuapp.com/api/cars', formData, {
                 headers: {
@@ -124,7 +128,6 @@ const AddCarForm = () => {
 
     return (
         <form
-            encType="multipart/form-data"
             onDrop={handleDrop}
             onDragOver={handleDragOver}
             onSubmit={handleSubmit}
@@ -285,7 +288,7 @@ const AddCarForm = () => {
                     className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none"
                     onClick={() => inputRef.current.click()}
                 >
-                    Загрузить фото
+                    Load Photo
                 </button>
                 <input
                     type="file"
