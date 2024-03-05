@@ -132,7 +132,7 @@ const RegisterForm = () => {
 
     return (
         <div className={'content max-w-screen h-screen pt-10 relative pb-20 flex justify-center items-center'}>
-            <div className={'w-1/2 h-3/4 bg-gray-600/95 border-2 border-gray-400/50 drop-shadow-2xl rounded-xl flex flex-col items-center justify-center'}>
+            <div className={'w-fit p-10 md:w-1/2 h-3/4 bg-gray-600/95 border-2 border-gray-400/50 drop-shadow-2xl rounded-xl flex flex-col items-center justify-center'}>
                 <form className={'w-full flex flex-col items-center gap-8'}>
                     <h1 className={'text-3xl text-white font-mono underline underline-offset-8'}>Registration</h1>
 
@@ -140,7 +140,7 @@ const RegisterForm = () => {
                         placeholder={'Username'}
                         type="text"
                         onChange={(e) => handleFormChange('username', e.target.value)}
-                        className={'w-1/2 h-10 rounded-full mx-auto text-center'}
+                        className={'w-fit px-10 h-10 rounded-full mx-auto text-center'}
                     />
                     {errors.username && <p className="text-red-500">{errors.username}</p>}
 
@@ -148,7 +148,7 @@ const RegisterForm = () => {
                         placeholder={'Password'}
                         type="password"
                         onChange={(e) => handleFormChange('password', e.target.value)}
-                        className={'w-1/2 h-10 rounded-full mx-auto text-center'}
+                        className={'w-fit px-10 h-10 rounded-full mx-auto text-center'}
                     />
                     {errors.password && <p className="text-red-500">{errors.password}</p>}
 
@@ -156,7 +156,7 @@ const RegisterForm = () => {
                         placeholder={'example@mail.com'}
                         type="email"
                         onChange={(e) => handleFormChange('email', e.target.value)}
-                        className={'w-1/2 h-10 rounded-full mx-auto text-center'}
+                        className={'w-fit px-10 h-10 rounded-full mx-auto text-center'}
                     />
                     {errors.email && <p className="text-red-500">{errors.email}</p>}
 
