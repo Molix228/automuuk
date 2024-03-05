@@ -62,7 +62,7 @@ const LoginForm = ({onLogin}) => {
 
     return (
         <div className="content max-w-screen h-screen pt-10 relative pb-20 flex justify-center items-center">
-            <div className="w-5/6 md:w-1/2 h-fit p-10 bg-gray-600/95 border-2 border-gray-400/50 drop-shadow-2xl rounded-xl flex flex-col items-center justify-center">
+            <div className="w-fit h-fit md:w-1/2 p-5 bg-gray-600/95 border-2 border-gray-400/50 drop-shadow-2xl rounded-xl flex flex-col items-center justify-center">
                 <form className="w-full flex flex-col items-center gap-8">
                     <h1 className="text-3xl text-white font-mono underline underline-offset-8">Login</h1>
 

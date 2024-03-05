@@ -132,7 +132,7 @@ const RegisterForm = () => {
 
     return (
         <div className={'content max-w-screen h-screen pt-10 relative pb-20 flex justify-center items-center'}>
-            <div className={'w-fit p-10 md:w-1/2 h-3/4 bg-gray-600/95 border-2 border-gray-400/50 drop-shadow-2xl rounded-xl flex flex-col items-center justify-center'}>
+            <div className={'w-fit h-fit p-5 md:w-1/2 bg-gray-600/95 border-2 border-gray-400/50 drop-shadow-2xl rounded-xl flex flex-col items-center justify-center'}>
                 <form className={'w-full flex flex-col items-center gap-8'}>
                     <h1 className={'text-3xl text-white font-mono underline underline-offset-8'}>Registration</h1>
 

@@ -6,9 +6,9 @@ import HomePage from './pages/HomePage.jsx';
 import RegisterForm from './components/RegisterForm.jsx';
 import LoginForm from './components/LoginForm.jsx';
 
-const MenuItem = ({ to, children }) => (
+const MenuItem = ({ to, children, onClick }) => (
     <li className="cursor-pointer mx-2 my-4 md:my-0">
-        <Link to={to}>
+        <Link to={to} onClick={onClick}>
             <button className="text-neutral-200 text-xl bg-blue-500 hover:bg-gray-600 rounded-3xl px-6 py-1 md:duration-300">
                 {children}
             </button>
@@ -23,19 +23,23 @@ const MenuToggler = ({ isLoggedIn }) => {
         setShowMenu((prevShowMenu) => !prevShowMenu);
     };
 
+    const closeMenu = () => {
+        setShowMenu(false)
+    }
+
     return (
         <div className={'md:absolute md:right-10'}>
             <ul className={`menu ul ${showMenu ? 'bg-white/30 backdrop-blur-md shadow-2xl' : 'bg-transparent'} max-w-max rounded-t-none rounded-xl flex flex-col md:flex-row md:items-center items-center z-[10] md:z-auto md:static absolute right-0 md:w-auto md:py-0 py-2 md:pl-0 pl-7 md:opacity-100 top-[80px] ${showMenu ? 'opacity-100 right-[0px] md:right-0' : 'opacity-0 right-[-100px] md:right-0'} transition-all ease-out duration-500`}>
                 {!isLoggedIn ? (
                     <>
-                        <MenuItem to="/login">Login</MenuItem>
-                        <MenuItem to="/register">Register</MenuItem>
+                        <MenuItem to="/login" onClick={closeMenu}>Login</MenuItem>
+                        <MenuItem to="/register" onClick={closeMenu}>Register</MenuItem>
                     </>
                 ) : (
                     <>
 
-                        <MenuItem to="/sell-auto">Sell Auto</MenuItem>
-                        <MenuItem to="/favourites">💛 Favourites ️</MenuItem>
+                        <MenuItem to="/sell-auto" onClick={closeMenu}>Sell Auto</MenuItem>
+                        <MenuItem to="/favourites" onClick={closeMenu}>💛 Favourites ️</MenuItem>
                     </>
                 )}
             </ul>
