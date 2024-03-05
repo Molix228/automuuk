@@ -5,7 +5,6 @@ import Nav from './components/Nav.jsx';
 import HomePage from './pages/HomePage.jsx';
 import RegisterForm from './components/RegisterForm.jsx';
 import LoginForm from './components/LoginForm.jsx';
-import {set} from "react-hook-form";
 
 const MenuItem = ({ to, children }) => (
     <li className="cursor-pointer mx-2 my-4 md:my-0">
@@ -34,18 +33,9 @@ const MenuToggler = ({ isLoggedIn }) => {
                     </>
                 ) : (
                     <>
-                        <li className="cursor-pointer mx-2 my-4 md:my-0">
-                            <a href="/sell-auto"
-                               className="text-neutral-200 text-xl bg-gray-500 hover:bg-gray-600 rounded-3xl px-6 py-1 md:duration-300">
-                                Sell Auto
-                            </a>
-                        </li>
-                        <li className="cursor-pointer mx-2 my-4 md:my-0">
-                            <a href="/favourites"
-                               className="text-neutral-200 text-xl bg-gray-500 hover:bg-gray-600 rounded-3xl px-6 py-1 md:duration-300">
-                                💛 Favourites ️
-                            </a>
-                        </li>
+
+                        <MenuItem to="/sell-auto">Sell Auto</MenuItem>
+                        <MenuItem to="/favourites">💛 Favourites ️</MenuItem>
                     </>
                 )}
             </ul>
