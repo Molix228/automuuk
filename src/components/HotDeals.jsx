@@ -23,11 +23,11 @@ const HotDeals = () => {
                     <div
                         className={"p-2.5 gap-2 w-auto h-auto bg-white/50 rounded-xl text-center flex flex-col justify-center"}
                         key={car.id}>
-                        <div className={"w-full h-full"}>
+                        <div className={"w-full h-72 overflow-hidden"}>
                             <img
                                 src={`https://api-services-ubw8.onrender.com${car.photo}`}
                                 alt={`${car.brand} ${car.model}`}
-                                className={"w-full h-full rounded-md object-contain"}
+                                className={"w-full h-full rounded-md object-cover"}
                             />
                         </div>
                         <p className={"text-xl text-black-500 font-semibold"}>{car.brand}</p>

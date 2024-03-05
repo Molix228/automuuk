@@ -84,9 +84,12 @@ const RegisterForm = () => {
         }
 
         if (!reCaptcha) {
-            newErrors.recaptcha = 'Please complete the reCAPTCHA';
-        } else {
-            newErrors.recaptcha = ''; // Очистить ошибку, если капча пройдена
+            Swal.fire({
+                title: "Captcha verification failed",
+                text: "Please complete the captcha to proceed.",
+                icon: "error",
+            });
+            return;
         }
 
         if (Object.values(newErrors).every((value) => value === '')) {
@@ -99,24 +102,17 @@ const RegisterForm = () => {
         }
 
         try {
-            const formDataObj = new FormData();
-            Object.entries(userData).forEach(([key, value]) => {
-                formDataObj.append(key, value);
+            const response = await axios.post('https://api-services-ubw8.onrender.com/api/users/register', userData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             });
-
-            console.log('User Data: ', formDataObj);
-
-            for (const pair of formDataObj.entries()) {
-                console.log(pair[0] + ': ' + pair[1]);
-            }
-
-            const response = await axios.post('https://api-services-ubw8.onrender.com/api/users/register', formDataObj);
 
             if (response.status === 200) {
                 console.log('User added successfully!');
                 Swal.fire({
                     title: "Good job!",
-                    text: "You was successfully registered!",
+                    text: "You were successfully registered!",
                     icon: "success"
                 });
                 setTimeout(()=>{
@@ -166,10 +162,10 @@ const RegisterForm = () => {
                     {errors.form && <p className="text-red-500">{errors.form}</p>}
 
                     <button
-                        disabled={!isFormValid()}
+                        disabled={!isFormValid}
                         onClick={handleRegistration}
                         className={`w-1/3 h-10 transition-all duration-500 ${
-                            !isFormValid() ? 'bg-green-900/80 cursor-not-allowed' : 'bg-green-600 scale-125 hover:bg-green-600/70'
+                            !isFormValid ? 'bg-green-900/80 cursor-not-allowed' : 'bg-green-600 scale-125 hover:bg-green-600/70'
                         } text-white font-semibold rounded-full`}
                     >
                         Submit
