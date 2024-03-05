@@ -1,12 +1,18 @@
-import React from 'react';
-import HotDeals from "../components/HotDeals.jsx";
+import React, {useEffect, useState} from 'react';
+import './HomePage.css'
 import AddCarForm from "../components/AddCarForm.jsx";
+import HotDeals from "../components/HotDeals.jsx";
+import CarSearch from "../components/CarSearch.jsx";
 const HomePage = () => {
+
     return (
-        <div className={"bg-blue-200 w-full min-h-screen relative"}>
-            <div className={"max-w-screen h-screen mx-4 pt-10 relative"}>
-                <HotDeals/>
+        <div className={"w-full min-h-screen relative"}>
+            <div className={"content max-w-screen h-screen pt-10 relative pb-20 flex justify-center items-center"}>
                 <AddCarForm/>
+                {/*<CarSearch/>*/}
+            </div>
+            <div className={"bg-blue-300 max-w-screen h-auto p-10 relative text-center"}>
+                <HotDeals/>
             </div>
         </div>
     );
