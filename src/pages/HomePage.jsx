@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './HomePage.css'
-import AddCarForm from "../components/AddCarForm.jsx";
 import HotDeals from "../components/HotDeals.jsx";
 import CarSearch from "../components/CarSearch.jsx";
-import Headroom from "react-headroom/src";
 const HomePage = () => {
 
     return (
