@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 const BrandSelection = ({ onSelectBrandAndModel, onNextStep }) => {
     const brandsAndModels = {
-        'Audi': ['A1', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'Q2', 'Q3', 'Q4', 'Q5', 'Q7', 'Q8', 'e-tron', 'TT', 'R8'],
+        'Audi': ['A1', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'S4', 'S5', 'S6', 'S7', 'S8', 'RS-3', 'RS-4', 'RS-5', 'RS-6', 'RS-7', 'Q2', 'Q3', 'Q4', 'Q5', 'Q7', 'Q8', 'e-tron', 'TT', 'R8'],
         'Baic': ['Model1', 'Model2', 'Model3', 'Model4', 'Model5', 'EU5', 'EX5', 'BJ80', 'BJ40', 'BJ20'],
         'Baojun': ['ModelX', 'ModelY', 'ModelZ', 'ModelW', '510', '530', '360', 'RS-3', 'RS-5'],
-        'BMW': ['X1', 'X3', 'X5', 'X7', '3 Series', '5 Series', '7 Series', 'i3', 'i8', 'Z4', 'X2', 'X4', 'X6', 'M2', 'M3', 'M4', 'M5', 'M8'],
+        'BMW': ['X1', 'X3', 'X5', 'X7', '1-Series', '114', '116', '118', '120', '123', '125', '128', '130', '135', '1-Series M Coupe', '3-Series', '315', '316', '318', '320', '323', '325', '330', '335', '340', '5-Series', '518', '520', '523', '524', '525', '528', '530', '533', '535', '540', '545', '550', '7-Series', '725', '728', '730', '732', '733', '735', '740', '745', '750', '760', 'i3', 'i8', 'Z4', 'X2', 'X4', 'X6', 'M2', 'M3', 'M4', 'M5', 'M8'],
         'Buick': ['Enclave', 'Encore', 'Envision', 'Regal', 'GL8', 'Verano', 'Lacrosse', 'Excelle', 'Cascada', 'Enspire'],
         'BYD': ['Song', 'Tang', 'Yuan', 'Han', 'e2', 'e3', 'e5', 'e6', 'S7', 'Qin', 'Tang DM', 'Song Pro'],
         'Cadillac': ['CT4', 'CT5', 'XT4', 'XT5', 'Escalade', 'CT6', 'ATS', 'XTS', 'SRX', 'ELR'],
@@ -29,7 +29,7 @@ const BrandSelection = ({ onSelectBrandAndModel, onNextStep }) => {
         'Kia': ['Forte', 'Optima', 'Sportage', 'Sorento', 'Telluride', 'Stinger', 'Rio', 'Soul', 'Niro', 'Cadenza'],
         'Land Rover': ['Range Rover', 'Discovery', 'Defender', 'Velar', 'Evoque', 'Sport', 'Freelander', 'Discovery Sport', 'Range Rover Sport'],
         'Lada': ['Granta', 'Vesta', 'XRAY', 'Niva', 'Priora', 'Kalina', '4x4', 'Largus', 'Urban', 'Vesta Cross'],
-        'Lexus': ['RX', 'NX', 'ES', 'GX', 'LX', 'IS', 'LS', 'RC', 'LC', 'UX'],
+        'Lexus': ['RX', 'NX', 'ES', 'GX', 'GS', 'LX', 'IS', 'LS', 'RC', 'LC', 'UX'],
         'Maruti': ['Swift', 'Baleno', 'Dzire', 'Wagon R', 'Vitara Brezza', 'Ertiga', 'S-Presso', 'Celerio', 'Alto', 'Ignis'],
         'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'MX-5', 'CX-9', 'MX-30', 'CX-3', 'CX-30', 'RX-8', 'BT-50'],
         'Mercedes': ['A-Class', 'C-Class', 'E-Class', 'GLE', 'S-Class', 'GLC', 'G-Class', 'CLA', 'CLS', 'GLA'],

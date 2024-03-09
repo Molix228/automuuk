@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-google-recaptcha": "^3.1.0",
+    "react-headroom": "^3.2.1",
     "react-hook-form": "^7.51.0",
     "react-modal-image": "^2.6.0",
     "react-router": "^6.22.2",
